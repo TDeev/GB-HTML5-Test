@@ -1,0 +1,220 @@
+//расширения
+%border {
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+//миксины
+@mixin bordercol($col) {
+  border: 1px solid $col;
+  box-sizing: border-box;
+}
+
+//переменные
+$fs: 10px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: 14px;
+  color: white;
+}
+
+.wrap {
+  max-width: 670px;
+  margin: 0 auto;
+  background-color: #323355;
+}
+
+.timeline {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    @include bordercol(#5e607a);
+  }
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: row;
+}
+
+.timeline-items-left {
+  flex: 1 1 auto;
+  max-width: 335px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 50px 30px 0;
+  box-sizing: border-box;
+
+  .timeline-item {
+    position: relative;
+    background-color: #a8608c;
+    padding: 15px 10px 15px 15px;
+    max-width: 180px;
+    box-shadow: 0 2px 5px #232331;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -15px;
+      margin: auto 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-left: 20px solid #a8608c;
+      border-bottom: 8px solid transparent;
+    }
+  }
+
+  .timeline-item-color-3,
+  .timeline-item-color-7 {
+    background-color: #967fb5;
+    &::after {
+      border-left: 20px solid #967fb5;
+    }
+  }
+
+  .timeline-item-color-5 {
+    background-color: #cd3737;
+    &::after {
+      border-left: 20px solid #cd3737;
+    }
+  }
+}
+
+.timeline-items-right {
+  flex: 1 1 auto;
+  max-width: 335px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 0 30px 50px;
+  box-sizing: border-box;
+
+  .timeline-item {
+    position: relative;
+    background-color: #739ac2;
+    padding: 15px 10px 15px 15px;
+    max-width: 180px;
+    box-shadow: 0 2px 5px #232331;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -15px;
+      margin: auto 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-right: 20px solid #739ac2;
+      border-bottom: 8px solid transparent;
+    }
+  }
+
+  .timeline-item-color-4 {
+    background-color: #7e9874;
+    &::before {
+      border-right: 20px solid #7e9874;
+    }
+  }
+
+  .timeline-item-color-6 {
+    background-color: #3d999d;
+    &::before {
+      border-right: 20px solid #3d999d;
+    }
+  }
+
+  .timeline-item-color-8 {
+    background-color: #6b7392;
+    &::before {
+      border-right: 20px solid #6b7392;
+    }
+  }
+}
+
+.timrline-item-big {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5e607a;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    z-index: 1;
+    line-height: 50px;
+    box-shadow: 0 2px 5px #232331;
+  }
+}
+
+.timeline-item-number-2011::after {
+  content: "2011";
+}
+
+.timeline-item-number-2006::after {
+  content: "2006";
+}
+
+.timeline-item-number-2004::after {
+  content: "2004";
+}
+
+.timeline-item-number-1999::after {
+  content: "1999";
+}
+
+.timeline-item-number-1998::after {
+  content: "1998";
+}
+
+.timeline-item-number-1984::after {
+  content: "1984";
+}
+
+.timrline-item-small {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #5e607a;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    z-index: 1;
+    line-height: 50px;
+    box-shadow: 0 2px 5px #232331;
+  }
+}
